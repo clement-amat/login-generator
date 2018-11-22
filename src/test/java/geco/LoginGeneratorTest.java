@@ -49,5 +49,11 @@ public class LoginGeneratorTest {
         assertTrue("PDUR n'a pas ete ajoute a la liste", loginService.loginExists("PDUR"));
     }
 
+    @Test
+    public void testNomInferieurTrois() {
+        assertEquals("Login invalide pour taille du nom inferieur à 3", "PDU",
+                loginGenerator.generateLoginForNomAndPrenom("Du", "Paul"));
+    }
+
 
 }
